@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Task</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #6b7280);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: auto;
+        }
+        h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: #ddd;
+        }
+        input:focus,
+        textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: scale(1.02);
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #responseMsg {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #responseMsg.show {
+            opacity: 1;
+        }
+        #responseMsg.success {
+            color: #00ff88;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        #responseMsg.error {
+            color: #ff4d4d;
+            text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <form id="taskForm">
+        <h2>Task Submission</h2>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="title" placeholder="Task Title" required>
+        <textarea id="description" placeholder="Description" required></textarea>
+        <input type="date" id="dueDate" required>
+        <button type="submit">Submit Task</button>
+        <p id="responseMsg"></p>
+    </form>
+    <script src="/static/script.js"></script>
+</body>
+</html>
